@@ -1,8 +1,22 @@
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #F9F9B3;
 }
 
 a {
   color: #00B7FF;
+}
+
+#chart div {
+  font: 10px sans-serif;
+  background-color: #E8A31E;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+
+.jumbotron {
+  background-color: ;
 }
