@@ -72,7 +72,6 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1><%= title %></h1>
-        <section id="x-axis"></section>
         <section id="graph"></section>
         <section id="list"></section>
         <p>
@@ -100,21 +99,21 @@
 
       var xAxis = d3.svg.axis()
                       .scale(x)
-                      .orient("top")
+                      .orient("bottom")
                       .ticks(10);
 
-      var svg = d3.select("#x-axis").append("svg")
+      var svg = d3.select("#graph").append("svg")
           .attr("width", 1200)
-          .attr("height", 50);
+          .attr("height", 400);
 
       //x.domain();
 
       svg.append("g")
           .attr("class", "x axis")
-          .attr("transform", "translate(0, 49)")
+          .attr("transform", "translate(0, 0)")
           .call(xAxis)
         .append("text")
-          .attr("x", 870)
+          .attr("x", 900)
           .attr("dx", ".71em")
           .style("z-index", 999)
           .style("text-anchor", "end")
