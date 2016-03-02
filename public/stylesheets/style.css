@@ -5,7 +5,9 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: white;/*#00B7FF;*/
+  background-color: none;
+  margin-top: -4px; /* style this inline or with d3*/
 }
 
 #chart div {
@@ -15,8 +17,21 @@ a {
   padding: 3px;
   margin: 1px;
   color: white;
+  height: 20px;
 }
 
 .jumbotron {
-  background-color: ;
+  background-color: ; /*#eee*/
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
 }

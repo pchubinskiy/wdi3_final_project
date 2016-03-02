@@ -52,7 +52,7 @@ $(function() {
   for (var i = 0; i < localStorage.responseLength; i++) {
     var stored_item = localStorage.getItem(i);
     var parsed_item = JSON.parse(stored_item);
-    listenersArray.push(parsed_item.listeners);
+    listenersArray.push([parsed_item.name, parsed_item.listeners, parsed_item.playcount]);
   }
   localStorage.setItem("listenersArray", JSON.stringify(listenersArray));
   //console.log(JSON.parse(localStorage.getItem("listenersArray")));

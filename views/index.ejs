@@ -90,9 +90,17 @@
         .selectAll("div")
           .data(data)
         .enter().append("div")
-          .style("width", function(d) { return ((d * 10)/100000) + "px"; })
-          .text(function(d) { return d; })
-        //.append('a').attr("href", function(d) { return d; });
+          .style("width", function(d) { return ((d[1] * 10)/100000) + "px"; })
+          .html(function(d) { return '<a href="#">'+d[0]+'</a>'; });
+          // .style("margin-top", "4px");
+
+      var xScale = d3.scale.linear()
+                           .domain([0, d3.max(data, function(d) { return d[0]; })])
+
+      d3.select("#chart").append("g")
+          .call(d3.svg.axis()
+                      .scale(xScale)
+                      .orient("bottom"));
     </script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
