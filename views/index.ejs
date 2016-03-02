@@ -91,7 +91,7 @@
           .data(data)
         .enter().append("div")
           .style("width", function(d) { return ((d[1] * 10)/100000) + "px"; })
-          .html(function(d) { return '<a href="#">'+d[0]+'</a>'; });
+          .html(function(d) { return '<a href="#">'+d[0]+'</a>'; })
 
       var x = d3.scale.linear()
                       .domain([8000000, 0])
@@ -104,18 +104,15 @@
 
       var svg = d3.select("#graph").append("svg")
           .attr("width", 1200)
-          .attr("height", 400);
-
-      //x.domain();
+          .attr("height", 400)
 
       svg.append("g")
           .attr("class", "x axis")
-          .attr("transform", "translate(0, 0)")
+          .attr("transform", "translate(10, 0)")
           .call(xAxis)
         .append("text")
           .attr("x", 900)
           .attr("dx", ".71em")
-          .style("z-index", 999)
           .style("text-anchor", "end")
           .text("Listeners");
 
