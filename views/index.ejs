@@ -60,7 +60,7 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -72,7 +72,8 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1><%= title %></h1>
-        <section id="chart"></section>
+        <section id="x-axis"></section>
+        <section id="graph"></section>
         <section id="list"></section>
         <p>
           <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
@@ -86,28 +87,45 @@
     <script>
       var data = JSON.parse(localStorage.getItem("listenersArray"));
 
-      d3.select("#chart")
+      d3.select("#graph")
         .selectAll("div")
           .data(data)
         .enter().append("div")
           .style("width", function(d) { return ((d[1] * 10)/100000) + "px"; })
           .html(function(d) { return '<a href="#">'+d[0]+'</a>'; });
-          // .style("margin-top", "4px");
 
-      var xScale = d3.scale.linear()
-                           .domain([0, d3.max(data, function(d) { return d[0]; })])
+      var x = d3.scale.linear()
+                      .domain([8000000, 0])
+                      .range([800, 0]);
 
-      d3.select("#chart").append("g")
-          .call(d3.svg.axis()
-                      .scale(xScale)
-                      .orient("bottom"));
+      var xAxis = d3.svg.axis()
+                      .scale(x)
+                      .orient("top")
+                      .ticks(10);
+
+      var svg = d3.select("#x-axis").append("svg")
+          .attr("width", 1200)
+          .attr("height", 50);
+
+      //x.domain();
+
+      svg.append("g")
+          .attr("class", "x axis")
+          .attr("transform", "translate(0, 49)")
+          .call(xAxis)
+        .append("text")
+          .attr("x", 870)
+          .attr("dx", ".71em")
+          .style("z-index", 999)
+          .style("text-anchor", "end")
+          .text("Listeners");
+
     </script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

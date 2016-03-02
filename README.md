@@ -41,7 +41,6 @@ Link to your wireframes – sketches of major views / interfaces in your applica
     * ./wdi3_final_project.html
 
 Descriptions of any unsolved problems or major hurdles your team had to overcome
-
- extra:
+    * The page width and height is much larger than itended, probably because d3 outputs the graph data before it resizes it
 
 

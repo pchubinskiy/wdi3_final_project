@@ -1,7 +1,7 @@
 body {
   /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #F9F9B3;
+  background-color: #87CE76;
 }
 
 a {
@@ -10,7 +10,7 @@ a {
   margin-top: -4px; /* style this inline or with d3*/
 }
 
-#chart div {
+#graph div {
   font: 10px sans-serif;
   background-color: #E8A31E;
   text-align: right;
@@ -21,7 +21,21 @@ a {
 }
 
 .jumbotron {
-  background-color: ; /*#eee*/
+  background-color: #F9F9B3; /*#eee*/
+}
+
+.navbar {
+  background-color: #FF9AAC; /*pink*/
+}
+
+div.navbar-header a.navbar-brand {
+  color: black;
+}
+ul.nav a.dropdown-toggle {
+  color: black;
+}
+div#navbar ul li a {
+  color: black;
 }
 
 .axis path,
