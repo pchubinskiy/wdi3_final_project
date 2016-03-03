@@ -75,11 +75,11 @@
           <h3 id="artist_moused_over"></h3>
           <div id="genre_tags">Genre Tags:</div>
           <ul>
-            <li id="genre_0" class="col-lg-2"></li>
-            <li id="genre_1" class="col-lg-2"></li>
-            <li id="genre_2" class="col-lg-2"></li>
-            <li id="genre_3" class="col-lg-2"></li>
-            <li id="genre_4" class="col-lg-2"></li>
+            <li id="genre_0"></li>
+            <li id="genre_1"></li>
+            <li id="genre_2"></li>
+            <li id="genre_3"></li>
+            <li id="genre_4"></li>
           </ul>
         </div>
         <h1><%= title %></h1>
@@ -101,7 +101,9 @@
         .selectAll("div")
           .data(data)
         .enter().append("div")
-          .style("width", function(d) { return (d[1]/10000) + "px" })
+          // subtract 1/7 of the listeners amount from itself to match the
+          // domain:range ratio (7000000:600)
+          .style("width", function(d) { return ((d[1]/10000) - ((d[1]/10000)/7)) + "px" })
           .html(function(d) { return /*'<a href="#">'+*/d[0]/*+'</a>'*/ })
           .attr('class', 'bar')
           .attr('id', function(d) { return d[0] })
@@ -109,7 +111,7 @@
 
       var x = d3.scale.linear()
                       .domain([0, 7000000])
-                      .range([0, 700]);
+                      .range([0, 600]);
 
       var xAxis = d3.svg.axis()
                       .scale(x)
@@ -118,7 +120,7 @@
 
       var svg = d3.select("#graph").append("svg")
           .attr("width", 900)
-          .attr("height", 100)
+          .attr("height", 200)
 
       svg.append("g")
           .attr("class", "x axis")

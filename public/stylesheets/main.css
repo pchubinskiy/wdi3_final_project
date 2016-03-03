@@ -46,7 +46,7 @@ div#navbar ul li a {
 }
 
 li {
-  display: inline-block;
+  display: block;
 }
 
 #information {
