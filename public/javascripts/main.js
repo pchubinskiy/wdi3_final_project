@@ -1,7 +1,7 @@
 $(function() {
 
   var apiMethod = '?method=chart.getTopArtists';
-  var apiKey = '&api_key=' + API_KEY;
+  var apiKey = '&api_key=b1edaebaa4cf27aec0976a586ff47224';
   var format = "&format=json";
   var apiPath = 'http://ws.audioscrobbler.com/2.0/' + apiMethod + apiKey + format;
 
@@ -79,6 +79,7 @@ $(function() {
 
     function passForGenrify(response, item_id) {
       $('#artist_moused_over').html(item_id);
+
       for (var i = 0; i < 5; i++) {
         showGenre(response.toptags.tag[i].name, i);
       }
