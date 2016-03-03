@@ -1,7 +1,7 @@
 $(function() {
 
   var apiMethod = '?method=chart.getTopArtists';
-  var apiKey = '&api_key=b1edaebaa4cf27aec0976a586ff47224';
+  var apiKey = '&api_key=' + API_KEY;
   var format = "&format=json";
   var apiPath = 'http://ws.audioscrobbler.com/2.0/' + apiMethod + apiKey + format;
 
@@ -65,10 +65,10 @@ $(function() {
       dataType: 'jsonp',
       data: {},
     }) //can I specify which object keys and array indexes are requested? (before return)
-    .done(function(artist_genres) {
+    .done(function(response) {
       console.log("success");
-      console.log(artist_genres);
-      passForGenrify(artist_genres);
+      console.log(response);
+      passForGenrify(response, item_id);
     })
     .fail(function() {
       console.log("error");
@@ -77,7 +77,8 @@ $(function() {
       console.log("complete");
     });
 
-    function passForGenrify(response) {
+    function passForGenrify(response, item_id) {
+      $('#artist_moused_over').html(item_id);
       for (var i = 0; i < 5; i++) {
         showGenre(response.toptags.tag[i].name, i);
       }

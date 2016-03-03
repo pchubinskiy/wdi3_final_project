@@ -43,6 +43,14 @@ li {
   display: inline-block;
 }
 
+#artist_moused_over {
+  margin-left: 37.5%;
+}
+
+#genre_tags {
+  margin-left: 37.5%;
+}
+
 /* styling for d3 */
 .axis path,
 .axis line {

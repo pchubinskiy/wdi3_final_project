@@ -43,5 +43,6 @@ Link to your wireframes – sketches of major views / interfaces in your applica
 Descriptions of any unsolved problems or major hurdles your team had to overcome
     * Last.fm's API doesn't return any data for genre info (even for the example request in the documentation).
     ! this app could be made mobile-responsive by running the d3 through window size conditionals and bootstrapping anything else
+    * label genres panel with artist name
 
 
