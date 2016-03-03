@@ -31,7 +31,8 @@ $(function() {
       var local_item = {
           "name": response.artists.artist[i].name,
           "listeners": response.artists.artist[i].listeners,
-          "playcount": response.artists.artist[i].playcount
+          "playcount": response.artists.artist[i].playcount,
+          "image": response.artists.artist[i].image[2]['#text']
         };
       var item = response.artists.artist[i];
       storeLocally(i, local_item);
@@ -46,13 +47,14 @@ $(function() {
   for (var i = 0; i < localStorage.responseLength; i++) {
     var stored_item = localStorage.getItem(i);
     var parsed_item = JSON.parse(stored_item);
-    listenersArray.push([parsed_item.name, parsed_item.listeners, parsed_item.playcount]);
+    listenersArray.push([parsed_item.name, parsed_item.listeners, parsed_item.playcount, parsed_item.image]);
   }
   localStorage.setItem("listenersArray", JSON.stringify(listenersArray));
   //console.log(JSON.parse(localStorage.getItem("listenersArray")));
 
-  $(".bar").hover(function(event) {
+  $(".bar").click(function(event) {
     var item_id = $(this).attr('id');
+    var link_for_image = $(this).attr('href');
 
     var apiMethod = '?method=artist.getTopTags';
     var param1 = '&artist=' + item_id;
@@ -68,7 +70,7 @@ $(function() {
     .done(function(response) {
       console.log("success");
       console.log(response);
-      passForGenrify(response, item_id);
+      passForInfoShow(response, item_id, link_for_image);
     })
     .fail(function() {
       console.log("error");
@@ -77,8 +79,9 @@ $(function() {
       console.log("complete");
     });
 
-    function passForGenrify(response, item_id) {
+    function passForInfoShow(response, item_id, link_for_image) {
       $('#artist_moused_over').html(item_id);
+      $('#artist_image').attr('src', link_for_image);
 
       for (var i = 0; i < 5; i++) {
         showGenre(response.toptags.tag[i].name, i);

@@ -14,4 +14,8 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Last.ichecked' });
 });
 
+router.get('/similar', function(req, res, next) {
+  res.render('similar', { title: 'Last.ichecked' });
+});
+
 module.exports = router;

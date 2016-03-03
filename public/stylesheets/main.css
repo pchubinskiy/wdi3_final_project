@@ -21,6 +21,12 @@ a {
   margin-left: 10px;
 }
 
+.bar {
+  /* for all browsers */
+  cursor: pointer;
+  cursor: hand;
+}
+
 .jumbotron {
   background-color: #F9F9B3; /*#eee*/
 }
@@ -43,11 +49,23 @@ li {
   display: inline-block;
 }
 
+#information {
+  position: fixed;
+  z-index: 9999;
+  display: inline-block;
+  margin-left: 50%;
+}
+
 #artist_moused_over {
   margin-left: 37.5%;
 }
 
 #genre_tags {
+  margin-left: 37.5%;
+}
+
+#artist_image {
+  border-radius: 100px;
   margin-left: 37.5%;
 }
 
