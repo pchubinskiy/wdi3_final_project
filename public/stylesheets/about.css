@@ -1,0 +1,34 @@
+/* inherited */
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #87CE76;
+}
+
+a {
+  color: white;
+  background-color: none;
+}
+
+.jumbotron {
+  background-color: #F9F9B3;
+}
+
+.navbar {
+  background-color: #FF9AAC;
+}
+
+div.navbar-header a.navbar-brand {
+  color: black;
+}
+ul.nav a.dropdown-toggle {
+  color: black;
+}
+div#navbar ul li a {
+  color: black;
+}
+
+/* about */
+#description {
+  color: ;
+}
+

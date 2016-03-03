@@ -72,60 +72,15 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1><%= title %></h1>
-        <section id="graph"></section>
-        <ul>
-          <li id="genre_0" class="col-lg-2"></li>
-          <li id="genre_1" class="col-lg-2"></li>
-          <li id="genre_2" class="col-lg-2"></li>
-          <li id="genre_3" class="col-lg-2"></li>
-          <li id="genre_4" class="col-lg-2"></li>
-        </ul>
-        <!-- <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p> -->
+        <p id="description">Last.ichecked is an app built using Last.fm's API.</p>
+        <p>The last time that I checked, that API is public and serves more than just social data. If that ever changes, you won't be able to see a bar graph on the home page.</p>
       </div>
     </div> <!-- /container -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="/javascripts/main.js"></script>
-    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script>
-      var data = JSON.parse(localStorage.getItem("listenersArray"));
 
-      d3.select("#graph")
-        .selectAll("div")
-          .data(data)
-        .enter().append("div")
-          .style("width", function(d) { return ((d[1] * 10)/100000) + "px"; })
-          .html(function(d) { return '<a href="#">'+d[0]+'</a>'; })
-          .attr('class', 'bar')
-          .attr('id', function(d) { return d[0] });
-
-      var x = d3.scale.linear()
-                      .domain([8000000, 0])
-                      .range([800, 0]);
-
-      var xAxis = d3.svg.axis()
-                      .scale(x)
-                      .orient("bottom")
-                      .ticks(10);
-
-      var svg = d3.select("#graph").append("svg")
-          .attr("width", 1200)
-          .attr("height", 100)
-
-      svg.append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(10, 0)")
-          .call(xAxis)
-        .append("text")
-          .attr("x", 900)
-          .attr("dx", ".71em")
-          .style("text-anchor", "end")
-          .text("Listeners");
-
-    </script>
-    <link rel='stylesheet' href='/stylesheets/main.css' />
+    <link rel='stylesheet' href='/stylesheets/about.css' />
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

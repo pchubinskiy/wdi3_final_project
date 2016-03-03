@@ -39,6 +39,11 @@ div#navbar ul li a {
   color: black;
 }
 
+li {
+  display: inline-block;
+}
+
+/* styling for d3 */
 .axis path,
 .axis line {
     fill: none;

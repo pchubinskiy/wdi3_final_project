@@ -35,17 +35,11 @@ $(function() {
         };
       var item = response.artists.artist[i];
       storeLocally(i, local_item);
-      //attach(item);
     }
   }
 
   function storeLocally(i, local_item) {
     localStorage.setItem(i, JSON.stringify(local_item));
-  }
-
-  function attach(item) {
-    var itemstring = '<div>' + item.listeners + " " + item.playcount + " " + item.name + '</div>';
-    $("#list").append(itemstring);
   }
 
   var listenersArray = [];
@@ -56,5 +50,42 @@ $(function() {
   }
   localStorage.setItem("listenersArray", JSON.stringify(listenersArray));
   //console.log(JSON.parse(localStorage.getItem("listenersArray")));
+
+  $(".bar").hover(function(event) {
+    var item_id = $(this).attr('id');
+
+    var apiMethod = '?method=artist.getTopTags';
+    var param1 = '&artist=' + item_id;
+    var limit = '&limit=5'
+    var apiPath = 'http://ws.audioscrobbler.com/2.0/' + apiMethod + param1 + limit + apiKey + format;
+
+    $.ajax({
+      url: apiPath,
+      type: 'GET',
+      dataType: 'jsonp',
+      data: {},
+    }) //can I specify which object keys and array indexes are requested? (before return)
+    .done(function(artist_genres) {
+      console.log("success");
+      console.log(artist_genres);
+      passForGenrify(artist_genres);
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+
+    function passForGenrify(response) {
+      for (var i = 0; i < 5; i++) {
+        showGenre(response.toptags.tag[i].name, i);
+      }
+    }
+
+    function showGenre(item, i) {
+      $('#genre_' + i).html(item);
+    }
+  });
 
 });

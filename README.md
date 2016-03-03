@@ -41,6 +41,7 @@ Link to your wireframes – sketches of major views / interfaces in your applica
     * ./wdi3_final_project.html
 
 Descriptions of any unsolved problems or major hurdles your team had to overcome
-    * The page width and height is much larger than itended, probably because d3 outputs the graph data before it resizes it
+    * Last.fm's API doesn't return any data for genre info (even for the example request in the documentation).
+    ! this app could be made mobile-responsive by running the d3 through window size conditionals and bootstrapping anything else
 
 
