@@ -47,6 +47,7 @@ URL: https://genrify.herokuapp.com/
     + ./wdi3_final_project.html
 
 **Descriptions of any unsolved problems or major hurdles your team had to overcome**
+
     +! this app could be made mobile-responsive by running the d3 through window size conditionals and bootstrapping anything else
     +! what would be a good use for angular? related links, maybe to other APIs?
     +! Actions dropdown doesn't have working links
