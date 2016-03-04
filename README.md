@@ -43,6 +43,7 @@ Link to your wireframes – sketches of major views / interfaces in your applica
 Descriptions of any unsolved problems or major hurdles your team had to overcome
     ! this app could be made mobile-responsive by running the d3 through window size conditionals and bootstrapping anything else
     ! what would be a good use for angular? related links, maybe to other APIs?
+    ! Actions dropdown doesn't have working links
     * Last.fm's API doesn't return any data for genre info (even for the example request in the documentation).
     * get x-axis label to show
 
