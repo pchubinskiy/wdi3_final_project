@@ -1,5 +1,5 @@
 # Full stack project for week twelve of WDI.
-URL: https://genrify.herokuapp.com/
+URL: https://lastichecked.herokuapp.com/
 
 **Explanations of the technologies used**
 
