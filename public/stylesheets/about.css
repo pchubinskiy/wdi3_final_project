@@ -1,11 +1,10 @@
 /* inherited */
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Varela Round', sans-serif;
   background-color: #87CE76;
 }
 
 a {
-  color: white;
   background-color: none;
 }
 
@@ -32,3 +31,6 @@ div#navbar ul li a {
   color: ;
 }
 
+img.bug {
+  margin-bottom: 2%;
+}

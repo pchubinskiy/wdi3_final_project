@@ -50,11 +50,10 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Genrify</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="/similar">Similar</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <!--<li><a href="#">Genrify</a></li>
+                <li role="separator" class="divider"></li>-->
+                <li class="dropdown-header">Graphs: </li>
+                <li><a href="/similar">Similar Artists</a></li>
               </ul>
             </li>
           </ul>
@@ -68,12 +67,12 @@
     </nav>
 
     <div class="container">
-      <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <div id="information">
+
+        <div id="information" class="hidden">
           <img id="artist_image" src="" alt="">
           <h3 id="artist_moused_over"></h3>
-          <div id="genre_tags">Genre Tags:</div>
+          <div id="genre_tags"></div>
           <ul>
             <li id="genre_0"></li>
             <li id="genre_1"></li>
@@ -84,57 +83,17 @@
         </div>
         <h1><%= title %></h1>
         <section id="graph"></section>
+        <p id="call_to_action">Click on a bar to see genres the artist has been tagged with.</p>
 
-        <!-- <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p> -->
       </div>
     </div> <!-- /container -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="/javascripts/main.js"></script>
     <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script>
-      var data = JSON.parse(localStorage.getItem("listenersArray"));
+    <script src="/javascripts/index_d3.js"></script>
 
-      d3.select("#graph")
-        .selectAll("div")
-          .data(data)
-        .enter().append("div")
-          // subtract 1/7 of the listeners amount from itself to match the
-          // domain:range ratio (7000000:600)
-          .style("width", function(d) { return ((d[1]/10000) - ((d[1]/10000)/7)) + "px" })
-          .html(function(d) { return /*'<a href="#">'+*/d[0]/*+'</a>'*/ })
-          .attr('class', 'bar')
-          .attr('id', function(d) { return d[0] })
-          .attr('href', function(d) { return d[3] });
-
-      var x = d3.scale.linear()
-                      .domain([0, 7000000])
-                      .range([0, 600]);
-
-      var xAxis = d3.svg.axis()
-                      .scale(x)
-                      .orient("bottom")
-                      .ticks(10);
-
-      var svg = d3.select("#graph").append("svg")
-          .attr("width", 900)
-          .attr("height", 200)
-
-      svg.append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(10, 0)")
-          .call(xAxis)
-        .append("text")
-          .attr("x", 600)
-          .attr("dx", ".71em")
-          .style("text-anchor", "end")
-          .style("z-index", "9999")
-          .style("width", function(d) { return ((d[1] * 10)/10000) + "px" }) /* will this help? */
-          .text("Listeners");
-
-    </script>
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/stylesheets/main.css' />
 
     <!-- Bootstrap core JavaScript

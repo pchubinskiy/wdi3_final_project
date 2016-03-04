@@ -1,4 +1,9 @@
 $(function() {
+  $('#information').removeClass('hidden');
+  $('#artist_moused_over').html("Daft Punk");
+  $('#artist_image').attr('src', "http://img2-ak.lst.fm/i/u/174s/9fd718d4c80e4ac89107c6c0bb908440.png");
+  $('#genre_tags').html("Genre Tags:");
+  showGenre("electronic", 0); showGenre("dance", 1); showGenre("House", 2); showGenre("electronica", 3); showGenre("techno", 4);
 
   var apiMethod = '?method=chart.getTopArtists';
   var apiKey = '&api_key=b1edaebaa4cf27aec0976a586ff47224';
@@ -80,8 +85,10 @@ $(function() {
     });
 
     function passForInfoShow(response, item_id, link_for_image) {
+      $('#information').removeClass('hidden');
       $('#artist_moused_over').html(item_id);
       $('#artist_image').attr('src', link_for_image);
+      $('#genre_tags').html("Genre Tags:");
 
       for (var i = 0; i < 5; i++) {
         showGenre(response.toptags.tag[i].name, i);
@@ -92,5 +99,24 @@ $(function() {
       $('#genre_' + i).html(item);
     }
   });
+
+  $('.jumbotron').click(function(event) {
+    passForInfoShow("", "", "");
+  });
+
+  function passForInfoShow(response, item_id, link_for_image) {
+    $("#information").addClass('hidden');
+    $('#artist_moused_over').html(item_id);
+    $('#artist_image').attr('src', link_for_image);
+    $('#genre_tags').html("");
+
+    for (var i = 0; i < 5; i++) {
+      showGenre("", i);
+    }
+  }
+
+  function showGenre(item, i) {
+    $('#genre_' + i).html(item);
+  }
 
 });

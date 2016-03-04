@@ -1,13 +1,12 @@
 body {
   /*padding: 50px;*/
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Varela Round', sans-serif;
   background-color: #87CE76;
 }
 
 a {
   color: white;/*#00B7FF;*/
   background-color: none;
-  margin-top: -4px; /* style this inline or with d3*/
 }
 
 #graph div {
@@ -45,28 +44,39 @@ div#navbar ul li a {
   color: black;
 }
 
+ul {
+  margin-top: 3%;
+  margin-left: -42px;
+  margin-bottom: 6%;
+}
+
 li {
   display: block;
+  /*color: #87CE76;*/
 }
 
 #information {
+  background-color: #F9F9B3;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(128, 128, 128, 0.22);
+  border-width: 3px;
   position: fixed;
   z-index: 9999;
   display: inline-block;
-  margin-left: 50%;
-}
-
-#artist_moused_over {
-  margin-left: 37.5%;
-}
-
-#genre_tags {
-  margin-left: 37.5%;
+  width: 325px;
+  margin-left: 51%;
+  margin-top: 3%;
+  text-align: center;
 }
 
 #artist_image {
   border-radius: 100px;
-  margin-left: 37.5%;
+  margin-top: 6%;
+}
+
+#call_to_action {
+ margin-left: 7px;
 }
 
 /* styling for d3 */
