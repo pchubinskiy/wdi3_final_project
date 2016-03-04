@@ -4,7 +4,7 @@ URL: https://genrify.herokuapp.com/
 **Explanations of the technologies used**
 
 1. D3.js
-- Data-Driven Documents were used to create chart visualizations of last.fm API data
++ Data-Driven Documents were used to create chart visualizations of last.fm API data
 
 **A couple paragraphs about the general approach you took**
     * made directory locally
