@@ -9,21 +9,22 @@ URL: https://lastichecked.herokuapp.com/
 
 **A couple paragraphs about the general approach you took**
 
-    + made directory locally
-    + set up express in repo
-    + made repo in github; created a remote for it in git
-    + installed mongoose, express as dependencies
-    + linked to jquery
-    + linked javascript; wrote ajax api call
-    + stored response to localStorage
-    + accessed local storage and used it as input for D3 visualization
-    +/ deployed to heroku; set up procfile; tested homepage
-    
-    +/ set up mongodb
-    +/ designed models and confirmed that db queries work
+     made directory locally
+     set up express in repo
+     made repo in github; created a remote for it in git
+     installed mongoose, express as dependencies
+     linked to jquery
+     linked javascript; wrote ajax api call
+     stored response to localStorage
+     accessed local storage and used it as input for D3 visualization
+     deployed to heroku; set up procfile; tested homepage
+     finalized d3 visualization
+     created and finished "about" and "contact" pages
+     made artist image and genre info display on bar click
 
 **Installation instructions for any dependencies**
-    
+
+    N/A    
 
 **Link to your user stories – who are your users, what do they want, and why?**
 
@@ -34,26 +35,26 @@ URL: https://lastichecked.herokuapp.com/
     Why: So they can compare the popularity of artists and genres on the platform
 
     As a user, I should be able to: 
-        + visit the page and see last.fm data for artists with the most listeners and subscribers appear
+         visit the page and see last.fm data for artists with the most listeners and subscribers appear
 
-        + click on a chart item and see that it is selected
-            +/! be able to genrify the selected item through the action dropdown so that genres the artist has been tagged with appear below the chart
-                +! click on one of the displayed genres and see a tooltip or popover with a description appear
+         click on a chart item and see that it is selected
+            /! be able to genrify the selected item through the action dropdown so that genres the artist has been tagged with appear below the chart
+                ! click on one of the displayed genres and see a tooltip or popover with a description appear
 
-        + see the artist's picture appear when I click on their name
+         see the artist's picture and genre info appear when I click on their name
 
 **Link to your wireframes – sketches of major views / interfaces in your application**
 
-    + ./wdi3_final_project.html
+     ./wdi3_final_project.html
 
 **Descriptions of any unsolved problems or major hurdles your team had to overcome**
 
-    +! this app could be made mobile-responsive by running the d3 through window size conditionals and bootstrapping anything else
-    +! what would be a good use for angular? related links, maybe to other APIs?
-    +! Actions dropdown doesn't have working links
-    +* Last.fm's API doesn't return any data for genre info (even for the example request in the documentation).
-    +* get x-axis label to show
+    ! used node request library so that AJAX calls are in middleware and API key is hidden (Sean's suggestion).
+    ! this app could be made mobile-responsive by running the d3 through window size conditionals and bootstrapping anything else: http://eyeseast.github.io/visible-data/2013/08/28/responsive-charts-with-d3/
+    ! what would be a good use for angular? related links, maybe to other APIs?
+    ! Actions dropdown doesn't have working links
+    * Last.fm's API doesn't return any data for genre info (even for the example request in the documentation).
 
-    +** for potential API holes or mashups: https://developer.musicgraph.com/api-docs/v2/artists
+    ** for potential API holes or mashups: https://developer.musicgraph.com/api-docs/v2/artists
 
 
