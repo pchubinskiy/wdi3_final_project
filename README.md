@@ -2,10 +2,10 @@
 URL: https://genrify.herokuapp.com/
 
 **Explanations of the technologies used**
-    * D3.js
-        - Data-Driven Documents were used to create chart visualizations of last.fm API data
+D3.js
+- Data-Driven Documents were used to create chart visualizations of last.fm API data
 
-A couple paragraphs about the general approach you took
+**A couple paragraphs about the general approach you took**
     * made directory locally
     * set up express in repo
     * made repo in github; created a remote for it in git
@@ -19,10 +19,10 @@ A couple paragraphs about the general approach you took
     / set up mongodb
     / designed models and confirmed that db queries work
 
-Installation instructions for any dependencies
+**Installation instructions for any dependencies**
     
 
-Link to your user stories – who are your users, what do they want, and why?
+**Link to your user stories – who are your users, what do they want, and why?**
     Users: last.fm users or researchers
     They want: to see an updated visualization of last.fm chart trends
     Why: So they can compare the popularity of artists and genres on the platform
@@ -36,11 +36,11 @@ Link to your user stories – who are your users, what do they want, and why?
 
         * see the artist's picture appear when I click on their name
 
-Link to your wireframes – sketches of major views / interfaces in your application
+**Link to your wireframes – sketches of major views / interfaces in your application**
 
     * ./wdi3_final_project.html
 
-Descriptions of any unsolved problems or major hurdles your team had to overcome
+**Descriptions of any unsolved problems or major hurdles your team had to overcome**
     ! this app could be made mobile-responsive by running the d3 through window size conditionals and bootstrapping anything else
     ! what would be a good use for angular? related links, maybe to other APIs?
     ! Actions dropdown doesn't have working links
