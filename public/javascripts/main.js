@@ -1,10 +1,4 @@
 $(function() {
-  $('#information').removeClass('hidden');
-  $('#artist_moused_over').html("Daft Punk");
-  $('#artist_image').attr('src', "http://img2-ak.lst.fm/i/u/174s/9fd718d4c80e4ac89107c6c0bb908440.png");
-  $('#genre_tags').html("Genre Tags:");
-  showGenre("electronic", 0); showGenre("dance", 1); showGenre("House", 2); showGenre("electronica", 3); showGenre("techno", 4);
-
   var apiMethod = '?method=chart.getTopArtists';
   var apiKey = '&api_key=b1edaebaa4cf27aec0976a586ff47224';
   var format = "&format=json";

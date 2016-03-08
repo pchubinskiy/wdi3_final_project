@@ -7,6 +7,10 @@ URL: https://lastichecked.herokuapp.com/
 
 + Data-Driven Documents were used to create chart visualizations of last.fm API data
 
+2. Bootstrap
+
++ Used for fixed-navbar layout.
+
 **A couple paragraphs about the general approach you took**
 
      made directory locally
