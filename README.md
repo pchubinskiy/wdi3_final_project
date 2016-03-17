@@ -25,15 +25,15 @@ D3.js
      made directory locally
      set up express in repo
      made repo in github; created a remote for it in git
-     installed mongoose, express as dependencies
+     installed express
      linked to jquery
      linked javascript; wrote ajax api call
-     stored response to localStorage
-     accessed local storage and used it as input for D3 visualization
+     stored response in localStorage
+     used local storage info as input for D3 visualization
      deployed to heroku; set up procfile; tested homepage
      finalized d3 visualization
      created and finished "about" and "contact" pages
-     made artist image and genre info display on bar click
+     wrote another ajax call to make artist image and genre info display on bar click
 
 **Installation instructions for any dependencies**
 
