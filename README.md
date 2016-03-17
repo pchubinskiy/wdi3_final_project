@@ -9,7 +9,15 @@ URL: https://lastichecked.herokuapp.com/
 
 2. Bootstrap
 
-+ Used for fixed-navbar layout.
++ Used for fixed-navbar layout
+
+3. Last.fm API
+
++ Used to get info for top artists (most subscribed) and top five genres and artist is tagged with
+
+4. LocalStorage
+
++ Used to store results from Last.fm API
 
 **A couple paragraphs about the general approach you took**
 
