@@ -9,7 +9,7 @@ Bootstrap
 
 Last.fm API
 
-+ Used to get info for top artists (most subscribed) and top five genres and artist is tagged with
++ Used to get info for top artists (most subscribed) and top five genres an artist is tagged with
 
 localStorage
 
