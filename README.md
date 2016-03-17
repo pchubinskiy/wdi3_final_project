@@ -11,7 +11,7 @@ Last.fm API
 
 + Used to get info for top artists (most subscribed) and top five genres and artist is tagged with
 
-LocalStorage
+localStorage
 
 + Used to store results from Last.fm API
 
