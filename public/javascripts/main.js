@@ -49,7 +49,6 @@ $(function() {
     listenersArray.push([parsed_item.name, parsed_item.listeners, parsed_item.playcount, parsed_item.image]);
   }
   localStorage.setItem("listenersArray", JSON.stringify(listenersArray));
-  //console.log(JSON.parse(localStorage.getItem("listenersArray")));
 
   $(".bar").click(function(event) {
     var item_id = $(this).attr('id');
@@ -65,7 +64,7 @@ $(function() {
       type: 'GET',
       dataType: 'jsonp',
       data: {},
-    }) //can I specify which object keys and array indexes are requested? (before return)
+    })
     .done(function(response) {
       console.log("success");
       console.log(response);

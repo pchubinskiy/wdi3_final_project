@@ -58,6 +58,7 @@ URL: https://lastichecked.herokuapp.com/
     ! what would be a good use for angular? related links, maybe to other APIs?
     ! Actions dropdown doesn't have working links
     * Last.fm's API doesn't return any data for genre info (even for the example request in the documentation).
+    * main.js:68 -- can I specify which object keys and array indexes are requested? (before return)
 
     ** for potential API holes or mashups: https://developer.musicgraph.com/api-docs/v2/artists
 
