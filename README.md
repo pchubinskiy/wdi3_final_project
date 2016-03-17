@@ -3,19 +3,19 @@ URL: https://lastichecked.herokuapp.com/
 
 **Explanations of the technologies used**
 
-1. D3.js
+1 D3.js
 
 + Data-Driven Documents were used to create chart visualizations of last.fm API data
 
-2. Bootstrap
+2 Bootstrap
 
 + Used for fixed-navbar layout
 
-3. Last.fm API
+3 Last.fm API
 
 + Used to get info for top artists (most subscribed) and top five genres and artist is tagged with
 
-4. LocalStorage
+4 LocalStorage
 
 + Used to store results from Last.fm API
 
