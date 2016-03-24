@@ -4,8 +4,8 @@
     .selectAll("div")
       .data(data)
     .enter().append("div")
-      // subtract 1/7 of the listeners amount from itself to match the
-      // domain:range ratio (7000000:600)
+      // to get pixels at ideal size, subtract 1/7 of the listeners
+      // amount from itself to match the domain:range ratio (7000000:600)
       .style("width", function(d) { return ((d[1]/10000) - ((d[1]/10000)/7)) + "px" })
       .html(function(d) { return d[0] })
       .attr('class', 'bar')

@@ -33,7 +33,6 @@ $(function() {
           "playcount": response.artists.artist[i].playcount,
           "image": response.artists.artist[i].image[2]['#text']
         };
-      var item = response.artists.artist[i];
       storeLocally(i, local_item);
     }
   }
@@ -68,7 +67,7 @@ $(function() {
     .done(function(response) {
       console.log("success");
       console.log(response);
-      passForInfoShow(response, item_id, link_for_image);
+      passForInfoDisplay(response, item_id, link_for_image);
     })
     .fail(function() {
       console.log("error");
@@ -77,7 +76,7 @@ $(function() {
       console.log("complete");
     });
 
-    function passForInfoShow(response, item_id, link_for_image) {
+    function passForInfoDisplay(response, item_id, link_for_image) {
       $('#information').removeClass('hidden');
       $('#artist_moused_over').html(item_id);
       $('#artist_image').attr('src', link_for_image);
@@ -94,10 +93,10 @@ $(function() {
   });
 
   $('.jumbotron').click(function(event) {
-    passForInfoShow("", "", "");
+    passForInfoDisplay("", "", "");
   });
 
-  function passForInfoShow(response, item_id, link_for_image) {
+  function passForInfoDisplay(response, item_id, link_for_image) {
     $("#information").addClass('hidden');
     $('#artist_moused_over').html(item_id);
     $('#artist_image').attr('src', link_for_image);
