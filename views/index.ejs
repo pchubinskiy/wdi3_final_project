@@ -62,9 +62,11 @@
     <div class="container">
       <div class="jumbotron">
 
-        <div ui-view></div>
-        <a ui-sref="home">Home</a>
-        <a ui-sref="test">Test</a>
+        <div id="information" class="">
+        </div>
+        <h1><%= title %></h1>
+        <section id="graph"></section>
+        <p id="call_to_action">Click on a bar to see genres the artist has been tagged with.</p>
 
       </div>
     </div> <!-- /container -->
