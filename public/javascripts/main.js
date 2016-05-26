@@ -27,31 +27,33 @@ $(function() {
     localStorage.setItem('responseLength', response.artists.artist.length);
 
     for (var i = 0; i < response.artists.artist.length; i++) {
-      var local_item = {
+      var localItem = {
           "name": response.artists.artist[i].name,
           "listeners": response.artists.artist[i].listeners,
           "playcount": response.artists.artist[i].playcount,
           "image": response.artists.artist[i].image[2]['#text']
         };
-      storeLocally(i, local_item);
+      storeLocally(i, localItem);
     }
   }
 
-  function storeLocally(i, local_item) {
-    localStorage.setItem(i, JSON.stringify(local_item));
+  function storeLocally(i, localItem) {
+    localStorage.setItem(i, JSON.stringify(localItem));
   }
 
+  //stores the set of responses in listenersArray, which will be passed to the D3 script "index_d3.js"
+  //in order to create bars for the graph
   var listenersArray = [];
   for (var i = 0; i < localStorage.responseLength; i++) {
-    var stored_item = localStorage.getItem(i);
-    var parsed_item = JSON.parse(stored_item);
-    listenersArray.push([parsed_item.name, parsed_item.listeners, parsed_item.playcount, parsed_item.image]);
+    var storedItem = localStorage.getItem(i);
+    var parsedItem = JSON.parse(storedItem);
+    listenersArray.push([parsedItem.name, parsedItem.listeners, parsedItem.playcount, parsedItem.image]);
   }
   localStorage.setItem("listenersArray", JSON.stringify(listenersArray));
 
   $(".bar").click(function(event) {
-    var item_id = $(this).attr('id');
-    var link_for_image = $(this).attr('href');
+    var itemId = $(this).attr('id');
+    var linkForImage = $(this).attr('href');
 
     var apiMethod = '?method=artist.getTopTags';
     var param1 = '&artist=' + item_id;
@@ -67,7 +69,7 @@ $(function() {
     .done(function(response) {
       console.log("success");
       console.log(response);
-      passForInfoDisplay(response, item_id, link_for_image);
+      passForInfoDisplay(response, itemId, linkForImage);
     })
     .fail(function() {
       console.log("error");
@@ -76,10 +78,10 @@ $(function() {
       console.log("complete");
     });
 
-    function passForInfoDisplay(response, item_id, link_for_image) {
+    function passForInfoDisplay(response, itemId, linkForImage) {
       $('#information').removeClass('hidden');
-      $('#artist_moused_over').html(item_id);
-      $('#artist_image').attr('src', link_for_image);
+      $('#artist_moused_over').html(itemId);
+      $('#artist_image').attr('src', linkForImage);
       $('#genre_tags').html("Genre Tags:");
 
       for (var i = 0; i < 5; i++) {
@@ -96,10 +98,10 @@ $(function() {
     passForInfoDisplay("", "", "");
   });
 
-  function passForInfoDisplay(response, item_id, link_for_image) {
+  function passForInfoDisplay(response, itemId, linkForImage) {
     $("#information").addClass('hidden');
-    $('#artist_moused_over').html(item_id);
-    $('#artist_image').attr('src', link_for_image);
+    $('#artist_moused_over').html(itemId);
+    $('#artist_image').attr('src', linkForImage);
     $('#genre_tags').html("");
 
     for (var i = 0; i < 5; i++) {
