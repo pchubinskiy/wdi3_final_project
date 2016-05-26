@@ -56,7 +56,7 @@ $(function() {
     var linkForImage = $(this).attr('href');
 
     var apiMethod = '?method=artist.getTopTags';
-    var param1 = '&artist=' + item_id;
+    var param1 = '&artist=' + itemId;
     var limit = '&limit=5'
     var apiPath = 'http://ws.audioscrobbler.com/2.0/' + apiMethod + param1 + limit + apiKey + format;
 
