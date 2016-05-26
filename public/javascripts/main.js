@@ -41,19 +41,17 @@ $(function() {
     localStorage.setItem(i, JSON.stringify(local_item));
   }
 
-  //stores the set of responses in listenersArray, which will be passed to the D3 script "index_d3.js"
-  //in order to create bars for the graph
   var listenersArray = [];
   for (var i = 0; i < localStorage.responseLength; i++) {
-    var storedItem = localStorage.getItem(i);
-    var parsedItem = JSON.parse(storedItem);
-    listenersArray.push([parsedItem.name, parsedItem.listeners, parsedItem.playcount, parsedItem.image]);
+    var stored_item = localStorage.getItem(i);
+    var parsed_item = JSON.parse(stored_item);
+    listenersArray.push([parsed_item.name, parsed_item.listeners, parsed_item.playcount, parsed_item.image]);
   }
   localStorage.setItem("listenersArray", JSON.stringify(listenersArray));
 
   $(".bar").click(function(event) {
-    var itemId = $(this).attr('id');
-    var linkForImage = $(this).attr('href');
+    var item_id = $(this).attr('id');
+    var link_for_image = $(this).attr('href');
 
     var apiMethod = '?method=artist.getTopTags';
     var param1 = '&artist=' + item_id;
@@ -69,7 +67,7 @@ $(function() {
     .done(function(response) {
       console.log("success");
       console.log(response);
-      passForInfoDisplay(response, itemId, linkForImage);
+      passForInfoDisplay(response, item_id, link_for_image);
     })
     .fail(function() {
       console.log("error");
@@ -78,10 +76,10 @@ $(function() {
       console.log("complete");
     });
 
-    function passForInfoDisplay(response, itemId, linkForImage) {
+    function passForInfoDisplay(response, item_id, link_for_image) {
       $('#information').removeClass('hidden');
-      $('#artist_moused_over').html(itemId);
-      $('#artist_image').attr('src', linkForImage);
+      $('#artist_moused_over').html(item_id);
+      $('#artist_image').attr('src', link_for_image);
       $('#genre_tags').html("Genre Tags:");
 
       for (var i = 0; i < 5; i++) {
@@ -98,10 +96,10 @@ $(function() {
     passForInfoDisplay("", "", "");
   });
 
-  function passForInfoDisplay(response, itemId, linkForImage) {
+  function passForInfoDisplay(response, item_id, link_for_image) {
     $("#information").addClass('hidden');
-    $('#artist_moused_over').html(itemId);
-    $('#artist_image').attr('src', linkForImage);
+    $('#artist_moused_over').html(item_id);
+    $('#artist_image').attr('src', link_for_image);
     $('#genre_tags').html("");
 
     for (var i = 0; i < 5; i++) {
